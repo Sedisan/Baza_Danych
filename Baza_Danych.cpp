@@ -97,7 +97,7 @@ plik.open(nazwa+".txt",std::ios::out);
             plik<<zapisywaczd<<'\n';
             plik.clear();
             plik.close();
-plik.close();
+
 
 
 
