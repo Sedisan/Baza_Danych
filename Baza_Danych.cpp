@@ -54,7 +54,7 @@ short Lista_Osob::ilosc_Osob=0;
 short Lista_Osob::k=0;
 std::string Lista_Osob::SOMETHING = "";
 
-int Lista_Osob::tablica[40]= {}; ///Do czego by wykorzystac ta tablice ?
+int Lista_Osob::tablica[40]= {};
 
 
 /*
@@ -118,7 +118,7 @@ int main()
         std::cout<<"1. Wprowadz nowa osobe do bazy"<<'\n';
         std::cout.width(30);
         std::cout<<"_______________________________ "<<'\n';
-        std::cout<<"2. Edytuj osobe z bazy"<<'\n';///Tutaj powinna byc mozliwosc przegladania
+        std::cout<<"2. Edytuj osobe z bazy"<<'\n';
         std::cout.width(30);
         std::cout<<"_______________________________ "<<'\n';
         std::cout<<"3. Usun z bazy osobe"<<'\n';
@@ -206,7 +206,7 @@ short zarzadzanie_Decyzja(short a)
             bool decyzja;
             std::cin>>decyzja;
             if((decyzja==0))
-                zarzadzanie_Decyzja(1);///camelCase ->NOTACJA WIELBLADZIA
+                zarzadzanie_Decyzja(1);
             std::cin.ignore();
         }
         Lista_Osob::ilosc_Osob++;
@@ -235,7 +235,7 @@ short zarzadzanie_Decyzja(short a)
 
 
         std::cout<<"Podaj imie: "<<"\r\n";
-        getline(std::cin,d1.imie);///Why I'm using structure, but not a local variable ? I could ;]
+        getline(std::cin,d1.imie)
         std::cout<<"Teraz nazwisko: "<<"\r\n";
         getline(std::cin,d1.nazwisko);
         std::cout<<"Wprowadz informacje charakteryzujace ta osobe: "<<"\r\n";
@@ -269,7 +269,7 @@ short zarzadzanie_Decyzja(short a)
         std::cout<<"_______________________________ "<<'\n';
         std::cout<<"3.Powrot do menu "<<'\n';
 
-        while(!(std::cin>>a))///Ponowne wykorzystanie a
+        while(!(std::cin>>a))
         {
             std::cout<<"To nie jest prawidlowa wartosc. Sprobuj ponownie"<<'\n';
             std::cin.clear();
@@ -281,9 +281,9 @@ short zarzadzanie_Decyzja(short a)
         {
         case 1:
         {
-            //short decyzja;
+           
             otwieranie_Pliku();
-            //   std::cout<<"UWAGA: "<<'\n';
+            
             Sleep(1000);
 
             /*
@@ -373,7 +373,7 @@ short zarzadzanie_Decyzja(short a)
             }
             std::string line;
             int nr_Linii=1;
-            //std::cout<<"Aktualnie w bazie mamy nastepujace osoby: ";
+
             std::string zapisywaczi="",zapisywaczn="",zapisywaczd="";
 
 
@@ -385,18 +385,12 @@ short zarzadzanie_Decyzja(short a)
                 default:
 
                 {
-                    /*
-                        std::cout<<"WYkonuje sie"<<'\n';
-                        Sleep(1000);
-
-                       std::cout<<"Wykonuje sie !"<<'\n';
-                        Sleep(1000);
-                    */
+                    
                     if(nr_Linii==1)
                         zapisywaczi+=line;
                     if(nr_Linii==2)
                         zapisywaczn+=line;
-                    if(nr_Linii==3)///Domyslnie bylo else
+                    if(nr_Linii==3)
                         zapisywaczd+=line;
                     break;
                 }
@@ -410,7 +404,7 @@ short zarzadzanie_Decyzja(short a)
             otwieracz.clear();
             otwieracz.close();
             std::cout<<"Co chcialbys edytowac ?(\nWpisz 0, by wybrac informacje dodatkowe,\n1 -> imie,\n2 -> imie i nazwisko,\n3->imie i informacje dodatkowe,\n4->nazwisko i informacje dodatkowe,\n5->wszystkie,\n6->cofnij) "<<'\n';
-            while(!(std::cin>>nowy))///A co jesli ktos chcialby wczytac kilka danych ?
+            while(!(std::cin>>nowy))
             {
                 std::cout<<"To nie jest prawidlowa wartosc. Sprobuj ponownie"<<'\n';
                 std::cin.clear();
@@ -439,7 +433,7 @@ short zarzadzanie_Decyzja(short a)
 
                 getline(std::cin,zapisywaczi);
                 std::cout<<"Wprowadz imie: "<<'\n';
-                getline(std::cin,zapisywaczi);///Jest to po zapisie, gdyz ktos moze przerwac w tym momencie i utracilby dane
+                getline(std::cin,zapisywaczi);
 
                 zarzadzanie::zapisywanie_Do_Pliku(sklejacz,zapisywaczi,zapisywaczn,zapisywaczd);
 
@@ -451,7 +445,7 @@ short zarzadzanie_Decyzja(short a)
 
                 getline(std::cin,zapisywaczi);
                 std::cout<<"Wprowadz imie: "<<'\n';
-                getline(std::cin,zapisywaczi);///Jest to po zapisie, gdyz ktos moze przerwac w tym momencie i utracilby dane
+                getline(std::cin,zapisywaczi);
                 std::cout<<"Wprowadz nazwisko: "<<'\n';
                 getline(std::cin,zapisywaczn);
                 zarzadzanie::zapisywanie_Do_Pliku(sklejacz,zapisywaczi,zapisywaczn,zapisywaczd);
@@ -464,7 +458,7 @@ short zarzadzanie_Decyzja(short a)
 
                 getline(std::cin,zapisywaczi);
                 std::cout<<"Wprowadz imie: "<<'\n';
-                getline(std::cin,zapisywaczi);///Jest to po zapisie, gdyz ktos moze przerwac w tym momencie i utracilby dane
+                getline(std::cin,zapisywaczi);
 
                 std::cout<<"Wprowadz informacje dodatkowe: "<<'\n';
                 getline(std::cin,zapisywaczd);
@@ -478,7 +472,7 @@ short zarzadzanie_Decyzja(short a)
 
                 getline(std::cin,zapisywaczi);
                 std::cout<<"Wprowadz nazwisko: "<<'\n';
-                getline(std::cin,zapisywaczn);///Jest to po zapisie, gdyz ktos moze przerwac w tym momencie i utracilby dane
+                getline(std::cin,zapisywaczn);
 
                 std::cout<<"Wprowadz informacje dodatkowe: "<<'\n';
                 getline(std::cin,zapisywaczd);
@@ -494,7 +488,7 @@ short zarzadzanie_Decyzja(short a)
                 std::cout<<"Wprowadz imie: "<<'\n';
                 getline(std::cin,zapisywaczi);
                 std::cout<<"Wprowadz nazwisko: "<<'\n';
-                getline(std::cin,zapisywaczn);///Jest to po zapisie, gdyz ktos moze przerwac w tym momencie i utracilby dane
+                getline(std::cin,zapisywaczn);
 
                 std::cout<<"Wprowadz informacje dodatkowe: "<<'\n';
                 getline(std::cin,zapisywaczd);
@@ -560,21 +554,19 @@ short zarzadzanie_Decyzja(short a)
         }
 
         sklejacz=sklejacz+".txt";
-        // std::cout<<sklejacz<<'\n';
-
-        // std::cout<<"I-k: "<<i-k-2<<'\n';
+     
         Lista_Osob::SOMETHING.erase(i-k-1,k+1);
-        // std::cout<<"Po calej iteracji sklejacz: "<<sklejacz<<'\n';
+      
 
         if(ktora==0)Lista_Osob::SOMETHING.erase(i-k-2,k+1);///Jesli k wskazuje na ostatni element
         //std::cout<<"Po calej iteracji wynosi: "<<Lista_Osob::SOMETHING<<'\n';
-        // Sleep(1000000);
+ 
 
 
         if(!(remove(sklejacz.c_str())))
         {
             std::fstream(where,std::ios::trunc | std::ios::out).flush();
-            //std::fstream( fname+".txt", std::ios::trunc | std::ios::out ).flush();
+
             std::fstream wyczyszczony;
 
             wyczyszczony.open(where,std::ios::out);
@@ -654,7 +646,7 @@ void otwieranie_Pliku()
         main();
     }
 
-    //std::cout<<'\n'<<Lista_Osob::SOMETHING<<'\n';
+
     Lista_Osob::k=0;
     for(unsigned short i=0; i<Lista_Osob::SOMETHING.length(); i++)
     {
@@ -672,7 +664,7 @@ void otwieranie_Pliku()
             for(unsigned short j=0; j<s.length(); j++)
                 Lista_Osob::SOMETHING[i]=s[j];///Rozwiazanie super tymczasowe()Gdy jest wiecej niz 10 osob nie dziala
 
-            // std::cout<<Lista_Osob::k<<'\n';
+
         }
 
         printf("%c",Lista_Osob::SOMETHING[i]);
@@ -681,9 +673,7 @@ void otwieranie_Pliku()
     printf("%d",Lista_Osob::k);
     printf("%s\n"," uzytkownikow");
 
-    ///Wsadzic po while.
-    ///A w while tylko zapisywanie. Nastepnie petla for, ktora bedzie wypisywala literka po literce
-    ///i dawala enter po cyfrze z kropka
+    
     otwieranie.clear();
     otwieranie.close();
 }
@@ -706,7 +696,7 @@ std::string informacje()
 }
 void trunc( const std::string & fname )
 {
-    std::fstream( fname+".txt", std::ios::trunc | std::ios::out ).flush();///Czyszczenie
+    std::fstream( fname+".txt", std::ios::trunc | std::ios::out ).flush();
 }
 int pozycja_Szukanego()
 {
@@ -730,7 +720,7 @@ int pozycja_Szukanego()
     if(pozycja!=std::string::npos)
     {
         system("cls");
-        //std::cout<<"Znaleziono na pozycji: "<<pozycja<<'\n';
+  
     }
     else
     {
